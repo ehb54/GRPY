@@ -1,10 +1,11 @@
 #!/bin/bash -x
 
-OSX_MIN_VERSION=10.11.0
+OSX_MIN_MAJ_VERSION=10.11
+OSX_MIN_VERSION=${OSX_MIN_MAJ_VERSION}.0
 
 gfortran -O2 -c -mmacosx-version-min=$OSX_MIN_VERSION ../GRPY/GRPY.f &
 gfortran -O2 -c -mmacosx-version-min=$OSX_MIN_VERSION ../lapackGRPY/lapack_dgsev.f &
 gfortran -O2 -c -mmacosx-version-min=$OSX_MIN_VERSION ../lapackGRPY/lapack_dsyev.f &
 gfortran -O2 -c -mmacosx-version-min=$OSX_MIN_VERSION ../lapackGRPY/lapblas_matInv.f &
 wait
-ld -o ./GRPY_osx -no_compact_unwind -macosx_version_min $OSX_MIN_VERSION -lSystem /usr/local/lib/libgfortran.a /usr/local/lib/libquadmath.a /usr/local/lib/gcc/x86_64-apple-darwin15.6.0/7.1.0/libgcc.a *.o
+ld -o ./GRPY_osx$OSX_MIN_MAJ_VERSION -no_compact_unwind -macosx_version_min $OSX_MIN_VERSION -lSystem /usr/local/lib/libgfortran.a /usr/local/lib/libquadmath.a /usr/local/lib/gcc/x86_64-apple-darwin15.6.0/7.1.0/libgcc.a *.o
