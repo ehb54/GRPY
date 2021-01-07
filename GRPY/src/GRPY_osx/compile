@@ -1,0 +1,6 @@
+gfortran -O2 -c -mmacosx-version-min=10.11.0 ../GRPY/GRPY.f &
+gfortran -O2 -c -mmacosx-version-min=10.11.0 ../lapackGRPY/lapack_dgsev.f &
+gfortran -O2 -c -mmacosx-version-min=10.11.0 ../lapackGRPY/lapack_dsyev.f &
+gfortran -O2 -c -mmacosx-version-min=10.11.0 ../lapackGRPY/lapblas_matInv.f &
+wait
+ld -o ./GRPY_osx -no_compact_unwind -macosx_version_min 10.11.0 -lSystem /usr/local/lib/libgfortran.a /usr/local/lib/libquadmath.a /usr/local/lib/gcc/x86_64-apple-darwin15.6.0/7.1.0/libgcc.a *.o
