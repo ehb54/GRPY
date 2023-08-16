@@ -49,6 +49,8 @@ RUN cd GRPY/GRPY/src/plasmaGRPY && \
 gfortran -c -O2 -ffpe-summary='none' -I../../ThirdParty/plasma-installer_2.8.0/install/include plasmaGRPY.f && \
 gfortran -o ../../bin/GRPYLinux/plasmaGRPY.exe -O2 -ffpe-summary='none' plasmaGRPY.o -L../../ThirdParty/plasma-installer_2.8.0/install/lib -lplasma -lquark -lcoreblasqw -lcoreblas -llapacke -lopenblas -L/GRPY/GRPY/ThirdParty/plasma-installer_2.8.0/install/lib -ltmg -llapack  -lpthread
 
-
+VOLUME [ "/work" ]
+WORKDIR /work
+ENTRYPOINT [ "/GRPY/GRPY/bin/GRPYLinux/plasmaGRPY.exe" ]
 
 
