@@ -15,3 +15,7 @@ This directory consists of
      user guide
   -> structures:
      folder with complete data used to create tables in the publication
+
+---
+Dockerfile available for parallel GRPY https://github.com/ehb54/GRPY/tree/master/GRPY/src/plasmaGRPY/docker
+
