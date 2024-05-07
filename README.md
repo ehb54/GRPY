@@ -18,6 +18,6 @@ This directory consists of
 
 ---
  * Dockerfile available for parallel GRPY in [GRPY/src/plasmaGRPY/docker](https://github.com/ehb54/GRPY/tree/master/GRPY/src/plasmaGRPY/docker)
- * Prebuilt container at available in dockerhub `docker run ehb1/grpy`
+ * Prebuilt container at available in [dockerhub](https://hub.docker.com/r/ehb1/grpy)
    * tested on Windows 10 (linux container), Linux, Apple Intel & Apple Silicon (arm64 native container for Apple Silicon)
 
